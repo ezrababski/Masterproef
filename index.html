@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="prefetch" href="imgs/face2b_Moment7.jpg">
+<link rel="stylesheet" href="main.css">
+<script src="https://unpkg.com/vue@3"></script>
+<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+</head>
+<body>
+    <main>
+        <section v-show="scene === 'title'">
+            <img @click.right="go('title1')" @click="go('title2')" src="imgs/untitled6-comp.png" />
+        </section>
+
+        <section v-show="scene === 'title1'">
+          <img @click.right="go('title2')" @click="go('title3')" src="imgs/face2b_Moment7.jpg" />
+      </section>
+
+      <section v-show="scene === 'title2'">
+        <img @click.right="go('title3')" @click="go('title3')" src="imgs/face-close.png" />
+    </section>
+
+        <section v-show="scene === 'title3'">
+            <img @click.right="go('face2')" @click="playVideo('face2')" src="imgs/untitled8.png" />
+            <video v-show="false" @click.right="go('face2'), playVideo2()" @click="go('face2'), playVideo2()" src="https://virology.s3.eu-west-2.amazonaws.com/face1.mp4"></video>
+        </section>
+
+        <section v-show="scene === 'face2'">
+            <video id="video2" @click.right="go('face2')" @click="go('face2')" src="https://virology.s3.eu-west-2.amazonaws.com/face2b.mp4"></video>
+        </section>
+
+    </main>
+    <script>
+        const app = {
+    data() {
+      return { scene: "title", vulture: true, bag: { coins: false, tickets: false } };
+    },
+    methods: {
+      go(scene) {
+        console.log(`Move to scene ${scene}`);
+        this.scene = scene;
+      },
+      findSection(el) {
+        while (el.nodeName !== "SECTION") {
+          el = el.parentElement;
+        }
+        return el;
+      },
+      playVideo2() {
+      document.getElementById("video2").play();
+  },
+      playVideo(nextScene) {
+            const section = this.findSection(event.target);
+            const image = section.querySelector("img");
+            const video = section.querySelector("video");
+            image.style.display = "none";
+            video.style.display = "block";
+            video.play();
+            video.addEventListener("ended", () => {
+              image.style.display = "block";
+              video.style.display = "none";
+              if (nextScene) {
+                this.scene = nextScene;
+              }
+            });
+          },
+    },
+  };
+
+  window.addEventListener('contextmenu', function (e) { 
+  // do something here... 
+  e.preventDefault(); 
+}, false);
+
+  Vue.createApp(app).mount("main");
+
+    </script>
+</body>
+</html>

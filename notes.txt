@@ -1,0 +1,5 @@
+if style.display ! = none,
+play video 
+
+
+

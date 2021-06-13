@@ -1,0 +1,43 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font: 14px sans-serif;
+  background: black;
+  color: white;
+  overflow: hidden;
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper,
+main {
+  margin-top: 150px;
+  width: 800px;
+  height: 600px;
+  position: relative;
+  background: black;
+  overflow-wrap: break-word;
+}
+
+map area {
+  outline: none;
+}
+
+img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+video {
+  max-width: 100%;
+  max-height: 100%;
+}
