@@ -16,7 +16,7 @@
             <img @click.right="go('title1')" @click="go('title2')" src="imgs/untitled6-comp.png" />
         </section>
 
-        <section v-show="scene === 'title1'">
+      <section v-show="scene === 'title1'">
           <img @click.right="go('title2')" @click="go('title3')" src="imgs/face2b_Moment7.jpg" />
       </section>
 
@@ -24,7 +24,7 @@
         <img @click.right="go('title3')" @click="go('title3')" src="imgs/face-close.png" />
     </section>
 
-        <section v-show="scene === 'title3'">
+    <section v-show="scene === 'title3'">
             <img @click.right="go('face2')" @click="playVideo('face2')" src="imgs/untitled8.png" />
             <video v-show="false" @click.right="go('face2'), playVideo2()" @click="go('face2'), playVideo2()" src="https://virology.s3.eu-west-2.amazonaws.com/face1.mp4"></video>
         </section>
