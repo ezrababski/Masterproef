@@ -3,18 +3,24 @@ html {
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
 }
 
-.ch {
-  margin-right: 400px;
+h1 {
+  font-size: 60pt;
+  font-style: italic;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-#ch2,
-#ch3 {
-  margin-top: 200px;
+h2 {
+  font-size: max(10pt 20pt);
+}
+
+#ch1 {
+  margin-left: 30px;
+  margin-right: 30px;
 }
 
 p {
-  font-size: 18pt;
-  line-height: 24pt;
+  font-size: 14pt;
+  line-height: 20pt;
   width: 90%;
   color: black;
 }
@@ -22,10 +28,10 @@ p {
 #gen {
   /* position: -webkit-sticky;
   position: sticky; */
-  position: fixed;
-  right: 0;
-  margin-top: 0;
-  margin-left: 50vw;
-  max-width: 20%;
-  max-height: 20%;
+  /* position: absolute; */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  max-height: 100%;
 }
