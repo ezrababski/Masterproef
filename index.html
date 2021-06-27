@@ -1,83 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
-<link rel="prefetch" href="imgs/face2b_Moment7.jpg">
-<link rel="stylesheet" href="main.css">
-<script src="https://unpkg.com/vue@3"></script>
-<script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <link rel="stylesheet" href="main.css">
+    <title>Master site</title>
 </head>
 <body>
+    
+<video id="gen" autoplay loop src="vids/white.mp4"></video>
+
     <main>
-        <section v-show="scene === 'title'">
-            <img @click.right="go('title1')" @click="go('title2')" src="imgs/untitled6-comp.png" />
-        </section>
+<div id="ch1" class="ch">
 
-      <section v-show="scene === 'title1'">
-          <img @click.right="go('title2')" @click="go('title3')" src="imgs/face2b_Moment7.jpg" />
-      </section>
+<h1>State of Loss</h1>
 
-      <section v-show="scene === 'title2'">
-        <img @click.right="go('title3')" @click="go('title3')" src="imgs/face-close.png" />
-    </section>
+    <p>
 
-    <section v-show="scene === 'title3'">
-            <img @click.right="go('face2')" @click="playVideo('face2')" src="imgs/untitled8.png" />
-            <video v-show="false" @click.right="go('face2'), playVideo2()" @click="go('face2'), playVideo2()" src="https://virology.s3.eu-west-2.amazonaws.com/face1.mp4"></video>
-        </section>
+        A cave, deep underground, blooming with stalactites and crystal flowers. Deeper still, beneath rock and sedemint, the constant, stertorous whir chop of millions of choked cooling fans rises through the ground and activates the natural acoustical resonances of the chamber.   
+        <br><br>
 
-        <section v-show="scene === 'face2'">
-            <video id="video2" @click.right="go('face2')" @click="go('face2')" src="https://virology.s3.eu-west-2.amazonaws.com/face2b.mp4"></video>
-        </section>
+        The noise of the fans is the only indication that something once existed here, 
 
-    </main>
-    <script>
-        const app = {
-    data() {
-      return { scene: "title", vulture: true, bag: { coins: false, tickets: false } };
-    },
-    methods: {
-      go(scene) {
-        console.log(`Move to scene ${scene}`);
-        this.scene = scene;
-      },
-      findSection(el) {
-        while (el.nodeName !== "SECTION") {
-          el = el.parentElement;
-        }
-        return el;
-      },
-      playVideo2() {
-      document.getElementById("video2").play();
-  },
-      playVideo(nextScene) {
-            const section = this.findSection(event.target);
-            const image = section.querySelector("img");
-            const video = section.querySelector("video");
-            image.style.display = "none";
-            video.style.display = "block";
-            video.play();
-            video.addEventListener("ended", () => {
-              image.style.display = "block";
-              video.style.display = "none";
-              if (nextScene) {
-                this.scene = nextScene;
-              }
-            });
-          },
-    },
-  };
 
-  window.addEventListener('contextmenu', function (e) { 
-  // do something here... 
-  e.preventDefault(); 
-}, false);
 
-  Vue.createApp(app).mount("main");
 
-    </script>
+    </p>
+
+</div>
+
+<div id="ch2" class="ch">
+
+    <h1>Primal Sound</h1>
+    
+        <p>
+          <span style="font-style: italic;">What is it that repeatedly presents itself to my mind? it is this: the coronal suture of the skull (this would first have to be investigated) has–let us assume–a certain similarity to the closely wavy line which the needle of a phonograph engraves on the receiving, rotating cylinder of the apparatus. What if one changed the needle and directed it on its return journey along a tracing which was not derived from the graphic translation of a sound, but existed of itself naturally–well: to put it plainly, along the coronal suture, for example. what would happen?
+
+A sound would necessarily result, a series of sounds, music … feelings–which? incredulity, timidity, fear, awe–which of all the feelings here possible prevents me from suggesting a name for the primal sound which would then make its appearance in the world … leaving that side for the moment: what variety of lines then, occurring anywhere, could one not put under the needle and try out? is there any contour that one could not, in a sense, complete in this way and then experience it, as it makes itself felt, thus transformed, in another field of sense?.....</span> 
+
+            <br><br>
+
+            Like Rilke's skull, the machines drag their needle across the jagged surface of our past.
+                    
+            <br><br>
+    
+            It's only a matter of time...
+    
+    
+    
+    
+        </p>
+    
+    </div>
+
+    <div id="ch3" class="ch">
+
+        <h1>Simulacra</h1>
+        
+            <p>
+              <span style="font-style: italic;">What is it that repeatedly presents itself to my mind? it is this: the coronal suture of the skull (this would first have to be investigated) has–let us assume–a certain similarity to the closely wavy line which the needle of a phonograph engraves on the receiving, rotating cylinder of the apparatus. What if one changed the needle and directed it on its return journey along a tracing which was not derived from the graphic translation of a sound, but existed of itself naturally–well: to put it plainly, along the coronal suture, for example. what would happen?
+    
+    A sound would necessarily result, a series of sounds, music … feelings–which? incredulity, timidity, fear, awe–which of all the feelings here possible prevents me from suggesting a name for the primal sound which would then make its appearance in the world … leaving that side for the moment: what variety of lines then, occurring anywhere, could one not put under the needle and try out? is there any contour that one could not, in a sense, complete in this way and then experience it, as it makes itself felt, thus transformed, in another field of sense?.....</span> 
+    
+                <br><br>
+    
+                Like Rilke's skull, the machines drag their needle across the jagged surface of our past.
+                        
+                <br><br>
+        
+                It's only a matter of time...
+        
+        
+        
+        
+            </p>
+        
+        </div>
+</main>
+
 </body>
 </html>
